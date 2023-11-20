@@ -14,6 +14,6 @@
 
 
    <Button  fx:id="buttonTwitter" onAction="#onTwitterButtonClick" prefHeight="25.0" prefWidth="150.0" text="Thu thập từ twitter" />
-   <Button prefHeight="25.0" prefWidth="150.0" text="Thu thập từ Blog" />
-   <Button prefHeight="25.0" prefWidth="150.0" text="Thu thập từ Opensea, Binance NFT" />
+   <Button  fx:id="buttonBlogs" onAction="#onBlogButtonClick" prefHeight="25.0" prefWidth="150.0" text="Thu thập từ Blog" />
+   <Button fx:id="buttonOpensea" onAction="#onOpenseaButtonClick" prefHeight="25.0" prefWidth="150.0" text="Thu thập từ Opensea, Binance NFT" />
 </VBox>

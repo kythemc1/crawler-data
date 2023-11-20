@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop.controller.CrawlerBlogController">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop.controller.CrawlerBinanceNFTController">
     <center>
         <VBox prefHeight="400.0" prefWidth="600.0">
 
@@ -31,23 +31,31 @@
                                 </Label>
                             </children>
                         </HBox>
-                        
                         <HBox prefHeight="25.0" prefWidth="600.0">
                             <children>
                                 <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <HBox prefHeight="25.0" prefWidth="63.0" />
-                              <Button fx:id="buttonBack" onAction="#buttonBack" mnemonicParsing="false" text="Back" />
-                              <HBox prefHeight="25.0" prefWidth="75.0" />
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox prefHeight="25.0" prefWidth="27.0" />
+                                    <Button fx:id="buttonBack" onAction="#buttonBack" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Back" />
+                                    <HBox prefHeight="25.0" prefWidth="115.0" />
+                                 </children>
+                              </HBox>
                            </children></HBox>
 
 
-                                <Button fx:id="buttonBlog" onAction="#onBlogButtonClick" prefHeight="63.0" prefWidth="201.0" text="Thu thập từ Blog mint" textAlignment="CENTER">
+                                <Button fx:id="buttonTwitter" onAction="#onBinanceNFTButtonClick" prefHeight="63.0" prefWidth="201.0" text="Thu thập từ BinanceNFT" textAlignment="CENTER">
                                     <font>
                                         <Font name="Berlin Sans FB Bold" size="12.0" />
                                     </font>
                                 </Button>
-                                <HBox prefHeight="50.0" prefWidth="200.0" />
+                                <HBox prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <HBox prefHeight="25.0" prefWidth="75.0" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Phân Tích" />
+                              <HBox prefHeight="25.0" prefWidth="57.0" />
+                           </children></HBox>
                             </children>
                         </HBox>
                     </children>

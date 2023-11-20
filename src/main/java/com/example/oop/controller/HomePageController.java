@@ -1,30 +1,42 @@
 package com.example.oop.controller;
 
-import com.example.oop.service.CrawlerTwitter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import com.example.oop.utils.SceneUtils;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 
 public class HomePageController {
     @FXML
     private Button buttonTwitter;
+
+    @FXML
+    private Button buttonBlogs;
+
+    @FXML
+    private Button buttonOpensea;
     SceneUtils sceneUtils =new SceneUtils();
 
     @FXML
+    private Label label;
+
+    public HomePageController() throws IOException {
+    }
+
+    @FXML
     void onTwitterButtonClick(ActionEvent event) throws IOException {
-        CrawlerTwitter crawlerTwitter=new CrawlerTwitter();
-        crawlerTwitter.CrawlerTwitterTest();
         sceneUtils.changeScene(event,"/crawler-twitter.fxml");
+//        label.setText("" );
     }
     @FXML
     void onBlogButtonClick(ActionEvent event) throws IOException {
-        sceneUtils.changeScene(event,"/crawler-blog.fxml");    }
+        sceneUtils.changeScene(event,"/crawler-blog.fxml");
+    }
 
     @FXML
     void onOpenseaButtonClick(ActionEvent event) throws IOException {
-        sceneUtils.changeScene(event,"/crawler-opensea.fxml");    }
-
+        sceneUtils.changeScene(event, "/crawler-binance-nft.fxml");
+    }
 }

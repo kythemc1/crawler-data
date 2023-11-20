@@ -39,10 +39,12 @@ dependencies {
     implementation('com.dlsc.formsfx:formsfx-core:11.5.0') {
         exclude(group: 'org.openjfx')
     }
-
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     implementation group: 'org.jsoup', name: 'jsoup', version: '1.16.1'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation group: 'org.json', name: 'json', version: '20210307'
 }
 
 test {

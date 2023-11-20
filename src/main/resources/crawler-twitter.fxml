@@ -1,16 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.text.Font?>
-<VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.oop.controller.CrawlerTwitterController"
-            prefHeight="400.0" prefWidth="600.0">
-    <Label text="Hệ Thống thu thập thông tin NFT" textAlignment="CENTER" textFill="#ed5656">
-        <font>
-            <Font name="System Italic" size="24.0" />
-        </font>
-    </Label>
-</VBox>
+<BorderPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop.controller.CrawlerTwitterController">
+   <center>
+      <VBox prefHeight="400.0" prefWidth="600.0">
+      
+          <ScrollPane prefHeight="415.0" prefWidth="600.0">
+              <Label fx:id="json" textFill="#070505">
+                  <font>
+                      <Font name="Bell MT" size="12.0" />
+                  </font>
+              </Label>
+          </ScrollPane>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="94.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="58.0" prefWidth="600.0">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="239.0">
+                     <children>
+                         <Label alignment="CENTER" prefHeight="59.0" prefWidth="600.0" text="Hệ Thống thu thập thông tin NFT" textAlignment="CENTER">
+                             <font>
+                                 <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+                             </font>
+                         </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="25.0" prefWidth="600.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <HBox prefHeight="25.0" prefWidth="81.0" />
+                              <Button mnemonicParsing="false" onAction="#buttonBack" text="Back" />
+                              <HBox prefHeight="25.0" prefWidth="77.0" />
+                           </children></HBox>
+               
+                                 
+                                                 <Button fx:id="buttonTwitter" onAction="#onTwitterButtonClick" prefHeight="63.0" prefWidth="201.0" text="Thu thập từ twitter" textAlignment="CENTER">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <HBox prefHeight="50.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

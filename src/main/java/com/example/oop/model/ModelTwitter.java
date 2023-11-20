@@ -6,10 +6,6 @@ public class ModelTwitter {
     public ModelTwitter() {
 
     }
-//    public ModelTwitter(String hashTag, String link) {
-//        this.hashTag = hashTag;
-//        this.link = link;
-//    }
     public String getHashTag() {
         return hashTag;
     }
@@ -25,4 +21,8 @@ public class ModelTwitter {
     public void setLink(String link) {
         this.link = link;
     }
+    public String toString(String link, String hashTag) {
+        return "link: " + link +"\n" +", hashTag: " + hashTag ;
+    }
+
 }
