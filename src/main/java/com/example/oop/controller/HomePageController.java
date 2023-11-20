@@ -16,7 +16,7 @@ public class HomePageController {
     private Button buttonBlogs;
 
     @FXML
-    private Button buttonOpensea;
+    private Button buttonBinanceNFT;
     SceneUtils sceneUtils =new SceneUtils();
 
     @FXML
@@ -36,7 +36,7 @@ public class HomePageController {
     }
 
     @FXML
-    void onOpenseaButtonClick(ActionEvent event) throws IOException {
+    void onBinanceNFTButtonClick(ActionEvent event) throws IOException {
         sceneUtils.changeScene(event, "/crawler-binance-nft.fxml");
     }
 }
