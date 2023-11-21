@@ -1,0 +1,10 @@
+.header1 {
+    -fx-font-size: 24px;
+    -fx-text-fill: #ed5656;
+    -fx-font-style: italic;
+    -fx-padding: 0 0 0 10;
+}
+
+.hyperlink {
+    -fx-padding: 5 0 5 10;
+}
