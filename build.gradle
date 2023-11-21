@@ -4,6 +4,8 @@ plugins {
     id 'org.javamodularity.moduleplugin' version '1.8.12'
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
+    // lombok
+    id "io.freefair.lombok" version "8.4"
 }
 
 group 'com.example'
@@ -25,8 +27,7 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'com.example.oop'
-    mainClass = 'com.example.oop.HelloApplication'
+    mainClass = 'com.example.oop.MainApplication'
 }
 
 javafx {
