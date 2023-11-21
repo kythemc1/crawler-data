@@ -23,10 +23,11 @@ public class CrawlerBlog {
 
         for (Element e:
                 elms) {
-            ModelBlog modelBlog =new ModelBlog();
+
             Elements element_h2 = e.getElementsByTag("h2");
             Elements elements_a =e.getElementsByTag("img");
             for (int i=0;i<element_h2.size();i++) {
+                ModelBlog modelBlog =new ModelBlog();
                 Elements name = element_h2.get(i).getElementsByTag("a");
                 modelBlog.setName(name.text());
                 modelBlog.setUrlBlog(name.attr("href"));
