@@ -17,7 +17,7 @@ public class HomePageController {
     void onTwitterButtonClick(ActionEvent event) throws IOException {
         CrawlerTwitter crawlerTwitter=new CrawlerTwitter();
         crawlerTwitter.CrawlerTwitterTest();
-        sceneUtils.changeScene(event,"/crawler-twitter.fxml");
+        sceneUtils.changeScene(event, "/com/example/oop/crawler-twitter.fxml");
     }
     @FXML
     void onBlogButtonClick(ActionEvent event) throws IOException {

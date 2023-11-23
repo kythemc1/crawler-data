@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop.controller.CrawlerTwitterController">
     <Label styleClass="header1" stylesheets="@../../../styles/common.css" text="Hệ Thống thu thập thông tin NFT" textAlignment="CENTER" textFill="#ed5656">
     </Label>
-   <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0">
-      <content>
-         <VBox fx:id="vBoxLinks" maxWidth="1.7976931348623157E308" prefHeight="200.0">
-            <children>
-               <Hyperlink maxWidth="1.7976931348623157E308" text="Hyperlink" />
-            </children>
-         </VBox>
-      </content>
-   </ScrollPane>
+   <TableView fx:id="tableViewMain" prefHeight="200.0" prefWidth="200.0">
+     <columns>
+       <TableColumn fx:id="columnViewIndex" prefWidth="75.0" text="#" />
+         <TableColumn fx:id="columnViewHashTag" prefWidth="75.0" text="Hash Tag" />
+       <TableColumn fx:id="columnViewLink" prefWidth="75.0" text="Link" />
+     </columns>
+   </TableView>
 </VBox>

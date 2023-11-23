@@ -1,15 +1,14 @@
 package com.example.oop.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class ModelTwitter {
     private String hashTag;
     private String link;
-    public ModelTwitter() {
 
-    }
-//    public ModelTwitter(String hashTag, String link) {
-//        this.hashTag = hashTag;
-//        this.link = link;
-//    }
     public String getHashTag() {
         return hashTag;
     }
