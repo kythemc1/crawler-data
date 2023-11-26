@@ -1,6 +1,7 @@
 package com.example.oop;
 
 import com.example.oop.model.ModelTwitter;
+import com.example.oop.views.HomePageView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,12 +16,10 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/oop/home-page.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("NFT-Crawler!");
-        stage.setScene(scene);
         stage.show();
-
+        HomePageView home = new HomePageView();
+        home.apply(stage);
     }
 
     public static void main(String[] args) {

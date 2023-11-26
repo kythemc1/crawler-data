@@ -5,6 +5,7 @@ import com.example.oop.model.ModelTwitter;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -19,8 +20,11 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class CrawlerTwitterController {
+public class CrawlerTwitterController implements Initializable {
     @FXML
     @SuppressWarnings("all")
     private VBox root;
@@ -33,18 +37,8 @@ public class CrawlerTwitterController {
     @FXML
     private TableColumn<ModelTwitter, Hyperlink> columnViewLink;
 
-    @FXML
-    public void  initialize() {
-        // bind data
-        if (MainApplication.twitterPosts != null)
-            this.tableViewMain.setItems(FXCollections.observableList(MainApplication.twitterPosts));
-        else
-            this.tableViewMain.setItems(FXCollections.observableArrayList(
-                    new ModelTwitter("Hashtag 1", "www.google.com"),
-                    new ModelTwitter("Hashtag 3", "www.facebook.com"),
-                    new ModelTwitter("Hashtag 2", "not_available_link")
-            ));
-
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         // index
         this.columnViewIndex.setCellValueFactory(cellData -> {
             long index = tableViewMain.getItems().indexOf(cellData.getValue()) + 1;
@@ -88,6 +82,9 @@ public class CrawlerTwitterController {
         this.tableViewMain.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 //        this.columnViewLink.setMaxWidth(Double.MAX_VALUE);
 
+    }
 
+    public void setData(List<ModelTwitter> data) {
+        this.tableViewMain.setItems(FXCollections.observableList(data));
     }
 }
