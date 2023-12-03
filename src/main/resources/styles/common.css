@@ -22,4 +22,5 @@
 
 .button {
     -fx-pref-width: unset;
+    -fx-pref-height: 25;
 }
