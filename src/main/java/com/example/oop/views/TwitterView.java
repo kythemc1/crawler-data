@@ -1,6 +1,6 @@
 package com.example.oop.views;
 
-import com.example.oop.controller.CrawlerTwitterController;
+import com.example.oop.controller.TwitterController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,7 +24,7 @@ public class TwitterView extends BaseView {
         return PATH;
     }
 
-    public CrawlerTwitterController getController() {
+    public TwitterController getController() {
         return super.getUnknownController();
     }
 }

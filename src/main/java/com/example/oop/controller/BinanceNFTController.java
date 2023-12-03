@@ -1,24 +1,19 @@
 package com.example.oop.controller;
 
-import com.example.oop.model.ModelTwitter;
-import com.example.oop.service.CrawlerTwitter;
+import com.example.oop.model.ModelBinanceNFT;
+import com.example.oop.service.CrawlerBinanceNFT;
 import com.example.oop.views.HomeView;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
-public class CrawlerTwitterController implements Initializable {
+public class BinanceNFTController {
     @FXML
     private Label json;
 
@@ -28,9 +23,9 @@ public class CrawlerTwitterController implements Initializable {
     }
 
     @FXML
-    void onTwitterButtonClick(ActionEvent event) throws IOException {
-        CrawlerTwitter crawlerTwitter = new CrawlerTwitter();
-        List<ModelTwitter> list = crawlerTwitter.CrawlerTwitter();
+    void onBinanceNFTButtonClick(ActionEvent event) throws IOException {
+        CrawlerBinanceNFT callAPIBinance = new CrawlerBinanceNFT();
+        List<ModelBinanceNFT> list = callAPIBinance.getPost();
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonLog = gson.toJson(list);
@@ -39,9 +34,5 @@ public class CrawlerTwitterController implements Initializable {
         System.out.println(json);
 
         json.setText(jsonLog);
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
     }
 }

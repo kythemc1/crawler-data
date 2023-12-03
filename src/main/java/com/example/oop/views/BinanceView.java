@@ -1,6 +1,6 @@
 package com.example.oop.views;
 
-import com.example.oop.controller.CrawlerBinanceNFTController;
+import com.example.oop.controller.BinanceNFTController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,7 +23,7 @@ public class BinanceView extends BaseView {
         return PATH;
     }
 
-    public CrawlerBinanceNFTController getController() {
+    public BinanceNFTController getController() {
         return super.getUnknownController();
     }
 }

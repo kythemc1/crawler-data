@@ -1,6 +1,6 @@
 package com.example.oop.views;
 
-import com.example.oop.controller.CrawlerBlogController;
+import com.example.oop.controller.BlogController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,7 +23,7 @@ public class BlogView extends BaseView {
         return PATH;
     }
 
-    public CrawlerBlogController getController() {
+    public BlogController getController() {
         return super.getUnknownController();
     }
 }
