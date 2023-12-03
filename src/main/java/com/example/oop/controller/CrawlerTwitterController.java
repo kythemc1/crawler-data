@@ -2,12 +2,14 @@ package com.example.oop.controller;
 
 import com.example.oop.model.ModelTwitter;
 import com.example.oop.service.CrawlerTwitter;
-import com.example.oop.utils.SceneUtils;
+import com.example.oop.views.HomeView;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
+import javafx.stage.Stage;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -20,16 +22,14 @@ public class CrawlerTwitterController implements Initializable {
     @FXML
     private Label json;
 
-    SceneUtils sceneUtils =new SceneUtils();
     @FXML
-    void buttonBack(ActionEvent event)throws IOException{
-
-        sceneUtils.changeScene(event, "/home-page.fxml");
+    void buttonBack(ActionEvent event) throws IOException {
+        ((Stage) json.getScene().getWindow()).setScene(new HomeView().getScene());
     }
 
     @FXML
     void onTwitterButtonClick(ActionEvent event) throws IOException {
-        CrawlerTwitter crawlerTwitter=new CrawlerTwitter();
+        CrawlerTwitter crawlerTwitter = new CrawlerTwitter();
         List<ModelTwitter> list = crawlerTwitter.CrawlerTwitter();
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

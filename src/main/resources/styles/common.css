@@ -1,0 +1,25 @@
+.h1 {
+    -fx-font-size: 24px;
+    font-size: 24px;
+
+    -fx-text-fill: #ed5656;
+    
+    -fx-font-style: italic;
+    font-style: italic;
+
+    -fx-padding: 20 0 20 0;
+    padding: 0 0 0 10;
+
+    -fx-alignment: center;
+
+    -fx-text-alignment: center;
+}
+
+.v_box_center {
+    -fx-alignment: top-center;
+    -fx-spacing: 10;
+}
+
+.button {
+    -fx-pref-width: unset;
+}
