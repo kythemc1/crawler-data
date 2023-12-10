@@ -24,7 +24,7 @@ public abstract class BaseView {
 
     protected abstract URL getSceneURL() throws NullPointerException;
 
-    public <T> T getUnknownController() {
+    public Object getController() {
         return this.loader.getController();
     }
 

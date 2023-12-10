@@ -24,6 +24,6 @@ public class BinanceView extends BaseView {
     }
 
     public BinanceNFTController getController() {
-        return super.getUnknownController();
+        return (BinanceNFTController)super.getController();
     }
 }

@@ -25,6 +25,6 @@ public class TwitterView extends BaseView {
     }
 
     public TwitterController getController() {
-        return super.getUnknownController();
+        return (TwitterController)super.getController();
     }
 }

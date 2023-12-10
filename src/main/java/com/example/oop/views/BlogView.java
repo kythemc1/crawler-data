@@ -24,6 +24,6 @@ public class BlogView extends BaseView {
     }
 
     public BlogController getController() {
-        return super.getUnknownController();
+        return (BlogController)super.getController();
     }
 }

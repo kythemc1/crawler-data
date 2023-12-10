@@ -24,6 +24,6 @@ public class HomeView extends BaseView{
     }
 
     public HomePageController getController() {
-        return super.getUnknownController();
+        return (HomePageController)super.getController();
     }
 }
