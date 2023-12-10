@@ -9,14 +9,20 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -72,6 +78,32 @@ public class BinanceNFTController implements Initializable {
 
         // url
         this.columnViewUrl.setCellValueFactory(new PropertyValueFactory<>("coverUrl"));
+        this.columnViewUrl.setCellValueFactory(cellData -> {
+            var link = new Hyperlink(cellData.getValue().getCoverUrl());
+            link.setOnAction(e -> {
+                try {
+                    Desktop.getDesktop().browse(URI.create(link.getText()));
+                } catch (IOException ex) {
+                    Stage popup = new Stage();
+                    // block if not closed
+                    popup.initModality(Modality.APPLICATION_MODAL);
+                    popup.setTitle("Link Error");
+
+                    javafx.scene.control.Label errMessage = new Label(ex.getMessage());
+                    // TODO: style
+
+                    var popupRoot = new StackPane(errMessage);
+
+                    var popupScene = new Scene(popupRoot);
+
+                    popup.setScene(popupScene);
+                    popup.showAndWait();
+                }
+            });
+            return new ReadOnlyObjectWrapper<>(link);
+
+        });
+
 
         // title
         this.columnViewTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
