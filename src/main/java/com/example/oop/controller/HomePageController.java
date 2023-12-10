@@ -2,20 +2,13 @@ package com.example.oop.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-
-import com.example.oop.views.BinanceView;
-import com.example.oop.views.BlogView;
-import com.example.oop.views.TwitterView;
-
+import com.example.oop.utils.SceneUtils;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class HomePageController implements Initializable {
+public class HomePageController {
     @FXML
     private Button buttonTwitter;
 
@@ -24,43 +17,26 @@ public class HomePageController implements Initializable {
 
     @FXML
     private Button buttonBinanceNFT;
+    SceneUtils sceneUtils =new SceneUtils();
+
+    @FXML
+    private Label label;
 
     public HomePageController() throws IOException {
     }
 
     @FXML
     void onTwitterButtonClick(ActionEvent event) throws IOException {
-        var twitterView = new TwitterView();
-
-        // change scene
-        var stage = (Stage) buttonTwitter.getScene().getWindow();
-        var scene = twitterView.getScene();
-        stage.setScene(scene);
+        sceneUtils.changeScene(event,"/crawler-twitter.fxml");
+//        label.setText("" );
     }
-
     @FXML
     void onBlogButtonClick(ActionEvent event) throws IOException {
-        var twitterView = new BlogView();
-
-        // change scene
-        var stage = (Stage) buttonTwitter.getScene().getWindow();
-        var scene = twitterView.getScene();
-        stage.setScene(scene);
+        sceneUtils.changeScene(event,"/crawler-blog.fxml");
     }
 
     @FXML
     void onBinanceNFTButtonClick(ActionEvent event) throws IOException {
-        var twitterView = new BinanceView();
-
-        // change scene
-        var stage = (Stage) buttonTwitter.getScene().getWindow();
-        var scene = twitterView.getScene();
-        stage.setScene(scene);
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        this.buttonTwitter.prefWidthProperty().bind(this.buttonBinanceNFT.prefWidthProperty());
-        this.buttonBlogs.prefWidthProperty().bind(this.buttonBinanceNFT.prefWidthProperty());
+        sceneUtils.changeScene(event, "/crawler-binance-nft.fxml");
     }
 }

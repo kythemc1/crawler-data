@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop.controller.HomePageController">
+
+   <Label alignment="CENTER" prefHeight="59.0" prefWidth="600.0" text="Hệ Thống thu thập thông tin NFT" textAlignment="CENTER">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+      </font>
+   </Label>
+
+
+   <Button  fx:id="buttonTwitter" onAction="#onTwitterButtonClick" prefHeight="25.0" prefWidth="150.0" text="Thu thập từ twitter" />
+   <Button  fx:id="buttonBlogs" onAction="#onBlogButtonClick" prefHeight="25.0" prefWidth="150.0" text="Thu thập từ Blog" />
+   <Button fx:id="buttonBinanceNFT" onAction="#onBinanceNFTButtonClick" prefHeight="25.0" prefWidth="150.0" text="Thu thập từ Binance NFT" />
+</VBox>

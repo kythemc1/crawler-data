@@ -3,8 +3,11 @@ package com.example.oop.model;
 public class ModelBinanceNFT {
     private String collectionId;
     private String coverUrl;
+
     private String title;
+
     private String network;
+
     private float volume;
     private float volumeRate;
 //    private int ownersCount;
@@ -77,6 +80,22 @@ public class ModelBinanceNFT {
         this.volumeRate = volumeRate;
     }
 
+//    public int getOwnersCount() {
+//        return ownersCount;
+//    }
+//
+//    public void setOwnersCount(int ownersCount) {
+//        this.ownersCount = ownersCount;
+//    }
+//
+//    public int getItemsCount() {
+//        return itemsCount;
+//    }
+//
+//    public void setItemsCount(int itemsCount) {
+//        this.itemsCount = itemsCount;
+//    }
+
     public int getListedCount() {
         return listedCount;
     }
@@ -92,6 +111,14 @@ public class ModelBinanceNFT {
     public void setFloorPrice(float floorPrice) {
         this.floorPrice = floorPrice;
     }
+
+//    public double getFloorPriceRate() {
+//        return floorPriceRate;
+//    }
+//
+//    public void setFloorPriceRate(double floorPriceRate) {
+//        this.floorPriceRate = floorPriceRate;
+//    }
 
     public int getVerified() {
         return verified;
