@@ -3,7 +3,7 @@ package com.example.oop.controller;
 import com.example.oop.model.ModelTwitter;
 import com.example.oop.service.CrawlerTwitter;
 import com.example.oop.views.HomeView;
-
+import com.google.gson.GsonBuilder;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -18,9 +18,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.awt.*;
 import java.io.IOException;
@@ -49,8 +46,7 @@ public class TwitterController implements Initializable {
         CrawlerTwitter crawlerTwitter = new CrawlerTwitter();
         List<ModelTwitter> list = crawlerTwitter.CrawlerTwitter();
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String jsonLog = gson.toJson(list);
+        String jsonLog = new GsonBuilder().setPrettyPrinting().create().toJson(list);
 
         // In chuỗi JSON ra màn hình
         System.out.println(jsonLog);
