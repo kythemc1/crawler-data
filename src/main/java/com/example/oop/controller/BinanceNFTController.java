@@ -31,23 +31,23 @@ public class BinanceNFTController implements Initializable {
     @FXML
     private TableView<ModelBinanceNFT> tableViewMain;
     @FXML
-    private TableColumn<ModelBinanceNFT, Long> columnViewIndex;
+    private TableColumn<ModelBinanceNFT, Long> tableColumnIndex;
     @FXML
-    private TableColumn<ModelBinanceNFT, Hyperlink> columnViewUrl;
+    private TableColumn<ModelBinanceNFT, Hyperlink> tableColumnUrl;
     @FXML
-    private TableColumn<ModelBinanceNFT, Text> columnViewTitle;
+    private TableColumn<ModelBinanceNFT, Text> tableColumnTitle;
     @FXML
-    private TableColumn<ModelBinanceNFT, Text> columnViewNetwork;
+    private TableColumn<ModelBinanceNFT, Text> tableColumnNetwork;
     @FXML
-    private TableColumn<ModelBinanceNFT, Text> columnViewVolumn;
+    private TableColumn<ModelBinanceNFT, Text> tableColumnVolumn;
     @FXML
-    private TableColumn<ModelBinanceNFT, Text> columnViewVolumnRate;
+    private TableColumn<ModelBinanceNFT, Text> tableColumnVolumnRate;
     @FXML
-    private TableColumn<ModelBinanceNFT, Text> columnViewListedCount;
+    private TableColumn<ModelBinanceNFT, Text> tableColumnListedCount;
     @FXML
-    private TableColumn<ModelBinanceNFT, Text> columnViewFloorPrice;
+    private TableColumn<ModelBinanceNFT, Text> tableColumnFloorPrice;
     @FXML
-    private TableColumn<ModelBinanceNFT, Text> columnViewVerified;
+    private TableColumn<ModelBinanceNFT, Text> tableColumnVerified;
 
     @FXML
     void buttonBack(ActionEvent ignoredEvent) throws IOException {
@@ -71,14 +71,14 @@ public class BinanceNFTController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // index
-        this.columnViewIndex.setCellValueFactory(cellData -> {
+        this.tableColumnIndex.setCellValueFactory(cellData -> {
             long index = tableViewMain.getItems().indexOf(cellData.getValue()) + 1;
             return new ReadOnlyObjectWrapper<>(index);
         });
 
         // url
-        this.columnViewUrl.setCellValueFactory(new PropertyValueFactory<>("coverUrl"));
-        this.columnViewUrl.setCellValueFactory(cellData -> {
+        this.tableColumnUrl.setCellValueFactory(new PropertyValueFactory<>("coverUrl"));
+        this.tableColumnUrl.setCellValueFactory(cellData -> {
             var link = new Hyperlink(cellData.getValue().getCoverUrl());
             link.setOnAction(e -> {
                 try {
@@ -106,24 +106,24 @@ public class BinanceNFTController implements Initializable {
 
 
         // title
-        this.columnViewTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        this.tableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         // network
-        this.columnViewNetwork.setCellValueFactory(new PropertyValueFactory<>("network"));
+        this.tableColumnNetwork.setCellValueFactory(new PropertyValueFactory<>("network"));
 
         // volume
-        this.columnViewVolumn.setCellValueFactory(new PropertyValueFactory<>("volume"));
+        this.tableColumnVolumn.setCellValueFactory(new PropertyValueFactory<>("volume"));
 
         // volumeRate
-        this.columnViewVolumnRate.setCellValueFactory(new PropertyValueFactory<>("volumeRate"));
+        this.tableColumnVolumnRate.setCellValueFactory(new PropertyValueFactory<>("volumeRate"));
 
         // listedCount
-        this.columnViewListedCount.setCellValueFactory(new PropertyValueFactory<>("listedCount"));
+        this.tableColumnListedCount.setCellValueFactory(new PropertyValueFactory<>("listedCount"));
 
         // floorPrice
-        this.columnViewFloorPrice.setCellValueFactory(new PropertyValueFactory<>("floorPrice"));
+        this.tableColumnFloorPrice.setCellValueFactory(new PropertyValueFactory<>("floorPrice"));
 
         // verified
-        this.columnViewVerified.setCellValueFactory(new PropertyValueFactory<>("verified"));
+        this.tableColumnVerified.setCellValueFactory(new PropertyValueFactory<>("verified"));
     }
 }

@@ -14,9 +14,9 @@
       <VBox prefHeight="400.0" prefWidth="600.0">
          <TableView fx:id="tableViewMain" prefWidth="200.0">
             <columns>
-               <TableColumn fx:id="columnViewIndex" prefWidth="75.0" text="#" />
-               <TableColumn fx:id="columnViewHashTag" prefWidth="75.0" text="Hash Tag" />
-               <TableColumn fx:id="columnViewLink" prefWidth="75.0" text="Link" />
+               <TableColumn fx:id="tableColumnIndex" prefWidth="75.0" text="#" />
+               <TableColumn fx:id="tableColumnHashTag" prefWidth="75.0" text="Hash Tag" />
+               <TableColumn fx:id="tableColumnLink" prefWidth="75.0" text="Link" />
             </columns>
          </TableView>
       </VBox>

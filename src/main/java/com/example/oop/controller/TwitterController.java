@@ -30,19 +30,19 @@ public class TwitterController implements Initializable {
     @FXML
     private TableView<ModelTwitter> tableViewMain;
     @FXML
-    private TableColumn<ModelTwitter, Long> columnViewIndex;
+    private TableColumn<ModelTwitter, Long> tableColumnIndex;
     @FXML
-    private TableColumn<ModelTwitter, Text> columnViewHashTag;
+    private TableColumn<ModelTwitter, Text> tableColumnHashTag;
     @FXML
-    private TableColumn<ModelTwitter, Hyperlink> columnViewLink;
+    private TableColumn<ModelTwitter, Hyperlink> tableColumnLink;
 
     @FXML
-    void buttonBack(ActionEvent event) throws IOException {
+    void buttonBack(ActionEvent ignored) throws IOException {
         ((Stage) tableViewMain.getScene().getWindow()).setScene(new HomeView().getScene());
     }
 
     @FXML
-    void onTwitterButtonClick(ActionEvent event) throws IOException {
+    void onTwitterButtonClick(ActionEvent ignored) throws IOException {
         CrawlerTwitter crawlerTwitter = new CrawlerTwitter();
         List<ModelTwitter> list = crawlerTwitter.CrawlerTwitter();
 
@@ -57,19 +57,19 @@ public class TwitterController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // index
-        this.columnViewIndex.setCellValueFactory(cellData -> {
+        this.tableColumnIndex.setCellValueFactory(cellData -> {
             long index = tableViewMain.getItems().indexOf(cellData.getValue()) + 1;
             return new ReadOnlyObjectWrapper<>(index);
         });
 
         // hash tag
-        this.columnViewHashTag.setCellValueFactory(cellData -> {
+        this.tableColumnHashTag.setCellValueFactory(cellData -> {
             var text = new Text(cellData.getValue().getHashTag());
             return new ReadOnlyObjectWrapper<>(text);
         });
 
         // link
-        this.columnViewLink.setCellValueFactory(cellData -> {
+        this.tableColumnLink.setCellValueFactory(cellData -> {
             var link = new Hyperlink(cellData.getValue().getLink());
             link.setOnAction(e -> {
                 try {
@@ -97,7 +97,7 @@ public class TwitterController implements Initializable {
         //// size ////
         // table - last col
         this.tableViewMain.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-//        this.columnViewLink.setMaxWidth(Double.MAX_VALUE);
+//        this.tableColumnLink.setMaxWidth(Double.MAX_VALUE);
 
     }
 }
