@@ -1,6 +1,7 @@
 package com.example.oop.service;
 
 import com.example.oop.model.ModelBlog;
+import com.example.oop.model.ModelTwitter;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
