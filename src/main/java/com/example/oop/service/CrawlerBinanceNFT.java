@@ -1,6 +1,8 @@
 package com.example.oop.service;
 
 import com.example.oop.model.ModelBinanceNFT;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -10,6 +12,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +50,15 @@ public class CrawlerBinanceNFT {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (FileWriter fileWriter = new FileWriter("G:\\nam4.1\\OOP\\project\\crawler-data\\src\\main\\java\\com\\example\\oop\\data\\BinanceNFT.json")) {
+            // Chuyển đổi danh sách thành chuỗi JSON và lưu vào tệp tin
+            gson.toJson(list, fileWriter);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return list;
     }
     private static String sendPOST(String url) throws IOException {

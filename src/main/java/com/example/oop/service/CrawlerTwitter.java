@@ -1,11 +1,14 @@
 package com.example.oop.service;
 
 import com.example.oop.model.ModelTwitter;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +41,15 @@ public class CrawlerTwitter {
             }
 
         }
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (FileWriter fileWriter = new FileWriter("G:\\nam4.1\\OOP\\project\\crawler-data\\src\\main\\java\\com\\example\\oop\\data\\Twitter.json")) {
+            // Chuyển đổi danh sách thành chuỗi JSON và lưu vào tệp tin
+            gson.toJson(modelTwitterList, fileWriter);
+            System.out.println("Đã lưu danh sách vào json.json"+modelTwitterList);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
        return modelTwitterList;
 
     }
